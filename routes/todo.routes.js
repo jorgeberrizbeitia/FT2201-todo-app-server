@@ -4,6 +4,10 @@ const TodoModel = require("../models/Todo.model")
 // aqui van todas nuestras rutas de todos
 
 router.get("/", async (req, res, next) => {
+
+  // console.log(req.session.user)
+  console.log(req.payload) // aqui revisamos el usuario logeado
+
   try {
     // const response = await TodoModel.find({}, {title: 1})
     const response = await TodoModel.find().select("title")
